@@ -16,7 +16,7 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
 "SELECT projects.title, DIFFERENCE(SUM(pledges.amount) - project.funding_goal) FROM projects
   JOIN pledges ON projects.id = pledges.project_id
   HAVING DIFFERENCE(SUM(pledges.amount) - project.funding_goal) > 0
-  GROUP BY projects.title"
+  GROUP BY projects.title;"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
